@@ -25,8 +25,8 @@ prepare() {
 }
 
 build() {
-    cd "${srcdir}"
-    go build -v -work -x "${_importpath}"
+    cd "${srcdir}"                          # cd "${srcdir}/.gopath/src/${_importpath}"
+    go build -v -work -x "${_importpath}"   # go build -v -work -x
 }
 
 package() {
