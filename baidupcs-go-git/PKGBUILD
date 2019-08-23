@@ -4,15 +4,14 @@ pkgver=3.6.r1.g0331ad1
 pkgrel=1
 pkgdesc="The terminal utility for Baidu Network Disk (Golang Version)."
 arch=('x86_64')
-makedepends=('git' 'go')
 depends=('glibc')
+makedepends=('git' 'go-pie')
 conflicts=("baidupcs")
 provides=("baidupcs")
 url="https://github.com/iikira/BaiduPCS-Go"
 license=("Apache")
 
 source=("${pkgname}::git+https://github.com/iikira/BaiduPCS-Go")
-
 sha256sums=('SKIP')
 
 pkgver() {
@@ -32,5 +31,5 @@ build() {
 package() {
     cd "${pkgname}"
     install -Dm755 BaiduPCS-Go "${pkgdir}/usr/bin/baidupcs"
-    install -Dm755 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+    install -Dm644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
 }

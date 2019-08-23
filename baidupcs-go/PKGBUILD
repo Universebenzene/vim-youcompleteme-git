@@ -8,6 +8,7 @@ pkgdesc="Terminal utility for Baidu Network Disk"
 arch=('x86_64')
 url="https://github.com/iikira/${_pkgname}"
 license=('Apache')
+depends=('glibc')
 makedepends=('go-pie' 'git')
 conflicts=("baidupcs")
 provides=("baidupcs")
@@ -15,12 +16,12 @@ source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
 sha512sums=('62082f0a1bedfb495d9b096ae06effacbf917cc721ff537522fb95b15e32300927a6cbaccd94f4c2881953af8eb69782d43ac35b195c647b3b67b7c664e3f3d0')
 
 build() {
-  cd "${_pkgname}-${pkgver}"
-  go build -v -work -x
+    cd "${_pkgname}-${pkgver}"
+    go build -v -work -x
 }
 
 package() {
-  cd "${_pkgname}-${pkgver}"
-  install -Dm755 "${_pkgname}" "${pkgdir}/usr/bin/baidupcs"
-  install -Dm644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+    cd "${_pkgname}-${pkgver}"
+    install -Dm755 "${_pkgname}" "${pkgdir}/usr/bin/baidupcs"
+    install -Dm644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
 }
