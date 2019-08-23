@@ -31,6 +31,6 @@ build() {
 
 package() {
     cd "${pkgname}"
-    install -Dm755 BaiduPCS-Go ${pkgdir}/usr/bin/baidupcs
-    install -Dm755 README.md -t ${pkgdir}/usr/share/doc/${pkgname}
+    install -Dm755 BaiduPCS-Go "${pkgdir}/usr/bin/baidupcs"
+    install -Dm755 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
 }
