@@ -6,7 +6,6 @@ pkgver=3.6
 pkgrel=1
 pkgdesc="Terminal utility for Baidu Network Disk"
 arch=('x86_64')
-_importpath="github.com/iikira/${_pkgname}"
 url="https://github.com/iikira/${_pkgname}"
 license=('Apache')
 makedepends=('go-pie' 'git')
